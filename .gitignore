@@ -58,6 +58,10 @@ release/
 # Private Directories
 Concepts/
 
+# Image Editing Files
+*.psd
+*.afphoto
+
 # MacOS
 .DS_Store
 
