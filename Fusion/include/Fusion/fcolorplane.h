@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The Layers Project
+ * Copyright (C) 2024 The Layers Project
  *
  * This file is part of Fusion.
  *
@@ -31,7 +31,7 @@
 #include "fcolor.h"
 
 FUSION_NAMESPACE_BEGIN
-class FUSION_EXPORT FColorPlane : public QWidget, public QLayers::QLThemeable
+class FUSION_EXPORT FColorPlane : public QWidget, public QLayers::QLDefinable
 {
 	Q_OBJECT
 

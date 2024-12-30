@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The Layers Project
+ * Copyright (C) 2024 The Layers Project
  *
  * This file is part of Fusion.
  *
@@ -236,10 +236,9 @@ void FGradientEditor::init_add_stop_buttons()
 				update_positions();
 			});
 
-		if (current_theme_item())
-			add_stop_button->apply_theme_item(
-				current_theme_item()->find_item(
-					add_stop_button->objectName().toStdString().c_str()));
+		if (definition())
+			add_stop_button->apply_definition(definition()->find_item(
+				add_stop_button->objectName().toStdString().c_str()));
 	}
 }
 

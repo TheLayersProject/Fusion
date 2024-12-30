@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The Layers Project
+ * Copyright (C) 2024 The Layers Project
  *
  * This file is part of Fusion.
  *
@@ -20,7 +20,6 @@
 #include <Fusion/ffillcontrol.h>
 
 #include <QMouseEvent>
-#include <QLayers/qlapplication.h>
 #include <Fusion/ffilldialog.h>
 
 using Layers::LAttribute;
@@ -43,7 +42,7 @@ FFillControl::~FFillControl()
 
 void FFillControl::set_attribute(LAttribute* attribute)
 {
-	m_fill->set_link_attribute(attribute);
+	m_fill->create_link(attribute);
 }
 
 bool FFillControl::eventFilter(QObject* object, QEvent* event)
@@ -58,8 +57,6 @@ bool FFillControl::eventFilter(QObject* object, QEvent* event)
 			if (mouse_event->button() & Qt::LeftButton)
 			{
 				FFillDialog fill_dialog;
-				//fill_dialog.apply_theme_item(
-				//	activeTheme()->find_item(fill_dialog.path()));
 				fill_dialog.move(mapToGlobal(QPoint(0, 0)));
 				fill_dialog.set_attribute(m_fill);
 				fill_dialog.exec();

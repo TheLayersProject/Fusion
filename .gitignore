@@ -57,3 +57,10 @@ release/
 
 # Private Directories
 Concepts/
+
+# MacOS
+.DS_Store
+
+# CMake
+CMakeLists.txt
+CMakePresets.json

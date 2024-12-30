@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The Layers Project
+ * Copyright (C) 2024 The Layers Project
  *
  * This file is part of Fusion.
  *
@@ -20,8 +20,6 @@
 #include <Fusion/fgradientdialog.h>
 
 #include <QMouseEvent>
-
-#include <QLayers/qlapplication.h>
 
 using Layers::LString;
 
@@ -47,6 +45,8 @@ FGradientDialog::FGradientDialog(
 
 	connect(m_apply_button, &QLButton::clicked,
 		[this] { done(QDialog::Accepted); });
+
+	apply_definition(lController.find_definition(path()));
 }
 
 std::vector<LString> FGradientDialog::stops() const

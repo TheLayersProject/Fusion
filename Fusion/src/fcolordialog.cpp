@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The Layers Project
+ * Copyright (C) 2024 The Layers Project
  *
  * This file is part of Fusion.
  *
@@ -22,7 +22,6 @@
 #include <QRegularExpressionValidator>
 #include <Layers/lstring.h>
 #include <QLayers/qlcalculate.h>
-#include <QLayers/qlapplication.h>
 
 using Layers::LAttribute;
 using Layers::LString;
@@ -128,6 +127,8 @@ FColorDialog::FColorDialog(QWidget* parent) :
 		});
 
 	m_z_slider->set_object_name("Z-Slider");
+
+	apply_definition(lController.find_definition(path()));
 }
 
 FColorDialog::~FColorDialog()
@@ -154,7 +155,7 @@ void FColorDialog::hsv_changed()
 
 void FColorDialog::init_attributes()
 {
-	m_color->set_link_attribute(m_color_plane->color());
+	m_color->create_link(m_color_plane->color());
 
 	m_color->on_change(
 		[this] {
@@ -175,7 +176,7 @@ void FColorDialog::init_attributes()
 		}
 	);
 
-	m_z_slider->value()->set_link_attribute(m_color_plane->z_axis());
+	m_z_slider->value()->create_link(m_color_plane->z_axis());
 }
 
 void FColorDialog::init_layout()

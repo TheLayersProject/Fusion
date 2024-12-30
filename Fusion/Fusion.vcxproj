@@ -112,6 +112,7 @@
     <QtMoc Include="include\Fusion\fgradientcontrol.h" />
     <QtMoc Include="include\Fusion\fgradientdialog.h" />
     <QtMoc Include="include\Fusion\fgradienteditor.h" />
+    <ClInclude Include="include\Fusion\fusion_init.h" />
     <ClInclude Include="src\fgradienteditoritem.h" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +125,7 @@
     <ClCompile Include="src\fgradientcontrol.cpp" />
     <ClCompile Include="src\fgradientdialog.cpp" />
     <ClCompile Include="src\fgradienteditor.cpp" />
+    <ClCompile Include="src\fusion_init.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

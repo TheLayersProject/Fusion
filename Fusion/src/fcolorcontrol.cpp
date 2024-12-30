@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The Layers Project
+ * Copyright (C) 2024 The Layers Project
  *
  * This file is part of Fusion.
  *
@@ -21,7 +21,6 @@
 
 #include <QMouseEvent>
 #include <Layers/lstring.h>
-#include <QLayers/qlapplication.h>
 #include <Fusion/fcolordialog.h>
 
 using Layers::LString;
@@ -43,8 +42,6 @@ FColorControl::~FColorControl()
 void FColorControl::click()
 {
 	FColorDialog color_dialog;
-	//color_dialog.apply_theme_item(
-	//	activeTheme()->find_item(color_dialog.path()));
 	color_dialog.color()->set_value(fill()->as<LString>());
 
 	center(&color_dialog, window());

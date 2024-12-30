@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The Layers Project
+ * Copyright (C) 2024 The Layers Project
  *
  * This file is part of Fusion.
  *
@@ -304,7 +304,7 @@ void FColorPlane::init_attributes()
 		}
 	);
 
-	m_cursor->fill()->set_link_attribute(m_color);
+	m_cursor->fill()->create_link(m_color);
 	m_cursor->border_fill()->set_value("#c0c0c0");
 	m_cursor->border_thickness()->set_value(2.0);
 	m_cursor->corner_radii_top_left()->set_value(2.0);

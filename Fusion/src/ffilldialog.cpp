@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The Layers Project
+ * Copyright (C) 2024 The Layers Project
  *
  * This file is part of Fusion.
  *
@@ -92,12 +92,14 @@ FFillDialog::FFillDialog(QWidget* parent) :
 	m_gradient_label->setFixedHeight(40);
 	m_gradient_label->setGraphicsEffect(m_gradient_label_opacity);
 	m_gradient_label->set_object_name("Gradient Label");
+
+	apply_definition(lController.find_definition(path()));
 }
 
 void FFillDialog::set_attribute(LAttribute* attribute)
 {
-	m_gradient_control->fill()->set_link_attribute(attribute);
-	m_color_control->fill()->set_link_attribute(attribute);
+	m_gradient_control->fill()->create_link(attribute);
+	m_color_control->fill()->create_link(attribute);
 
 	if (const auto* gradient_stops =
 		m_color_control->fill()->as_if<std::vector<LString>>())

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The Layers Project
+ * Copyright (C) 2024 The Layers Project
  *
  * This file is part of Fusion.
  *
@@ -21,7 +21,6 @@
 
 #include <QMouseEvent>
 #include <Layers/lstring.h>
-#include <QLayers/qlapplication.h>
 #include <Fusion/fgradientdialog.h>
 
 using Layers::LString;
@@ -50,8 +49,6 @@ bool FGradientControl::eventFilter(QObject* object, QEvent* event)
 		if (mouse_event->button() & Qt::LeftButton)
 		{
 			FGradientDialog gradient_dialog(m_fill->as<std::vector<LString>>());
-			//gradient_dialog.apply_theme_item(
-			//	activeTheme()->find_item(gradient_dialog.path()));
 
 			center(&gradient_dialog, window());
 
