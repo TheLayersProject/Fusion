@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>color_icon.png</file>
+        <file>fill_icon.svg</file>
+        <file>gradient_icon.svg</file>
+    </qresource>
+</RCC>
