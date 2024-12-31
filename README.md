@@ -1,12 +1,12 @@
 # Fusion
 
-<img src="https://layersproject.org/images/fusion_logo.svg" alt="Fusion Logo Image" width="100px"/>
-
-Fusion is a C++ library that contains user-interfaces for editing colors and gradients.
+<img src="https://github.com/TheLayersProject/Fusion/blob/main/images/fusion_logo.svg?raw=true" alt="Fusion Logo Image" width="50px"/>
 
 ### Caution:
 
 **Fusion is still under active development. It is not yet recommended for production use. Developers should proceed with caution.**
+
+Fusion is a C++ library that contains user-interfaces for editing colors and gradients.
 
 ## Fusion Development
 
