@@ -208,7 +208,7 @@ void FGradientEditor::init_add_stop_buttons()
 	for (int i = 0; i < m_items.size() - 1; i++)
 	{
 		QLButton* add_stop_button = new QLButton(
-			QLGraphic(":/images/new_theme.svg", QSize(14, 14)), this);
+			QLGraphic(":/images/plus.svg", QSize(14, 14)), this);
 		add_stop_button->show();
 		add_stop_button->set_object_name("Add Stop Buttons");
 		add_stop_button->set_padding(0);
