@@ -1,0 +1,75 @@
+{
+    "Fill Dialog": {
+        "_include": "QLayers/qldialog.json::Dialog",
+        "attributes": {
+            "Border.Thickness": 0,
+            "Corner Radii.Bottom Left": 7,
+            "Corner Radii.Bottom Right": 7,
+            "Corner Radii.Top Left": 7,
+            "Corner Radii.Top Right": 7,
+            "Fill": "L:Theme/Secondary"
+        },
+        "children": {
+            "Color Label": "QLayers/qllabel.json::Label",
+            "Fill Type Toggle": {
+                "_include": "QLayers/qlwidget.json::Widget",
+                "attributes": {
+                    "Corner Radii.Bottom Left": 4,
+                    "Corner Radii.Bottom Right": 4,
+                    "Corner Radii.Top Left": 4,
+                    "Corner Radii.Top Right": 4,
+                    "Fill": "#6fc65b",
+                    "Margins.Bottom": 10,
+                    "Margins.Left": 10,
+                    "Margins.Right": 10,
+                    "Margins.Top": 10
+                },
+                "children": {
+                    "Square": {
+                        "attributes": {
+                            "Corner Radii.Bottom Left": 2,
+                            "Corner Radii.Bottom Right": 2,
+                            "Corner Radii.Top Left": 2,
+                            "Corner Radii.Top Right": 2,
+                            "Fill": "#ffffff"
+                        }
+                    }
+                }
+            },
+            "Gradient Label": "QLayers/qllabel.json::Label",
+            "Titlebar": {
+                "_include": "QLayers/qlwidget.json::Widget",
+                "attributes": {
+                    "Corner Radii.Top Left": 7,
+                    "Corner Radii.Top Right": 7
+                },
+                "children": {
+                    "Exit Button": {
+                        "_include": "QLayers/qlwidget.json::Widget",
+                        "attributes": {
+                            "Corner Radii.Top Right": 7,
+                            "Fill": "#00000000"
+                        },
+                        "children": {
+                            "Graphic": {
+                                "_include": "QLayers/qlwidget.json::Widget",
+                                "children": {
+                                    "Svg": {
+                                        "attributes": {
+                                            "Color": {
+                                                "states": {
+                                                    "Selected": "#e33036"
+                                                },
+                                                "value": "#6a6a6a"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

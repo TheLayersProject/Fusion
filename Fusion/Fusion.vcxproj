@@ -73,6 +73,9 @@
       <AdditionalLibraryDirectories>$(Layers)x64\Debug\;$(QLayers)x64\Debug\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Layersd.lib;QLayersd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>"$(Layers)$(IntDir)LayersResourceCompiler.exe" "$(ProjectDir)definitions\definitions.lrc" "$(ProjectDir)definitions\definitions.cpp"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
@@ -116,6 +119,7 @@
     <ClInclude Include="src\fgradienteditoritem.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="definitions\definitions.cpp" />
     <ClCompile Include="src\fcolor.cpp" />
     <ClCompile Include="src\fcolorcontrol.cpp" />
     <ClCompile Include="src\fcolordialog.cpp" />

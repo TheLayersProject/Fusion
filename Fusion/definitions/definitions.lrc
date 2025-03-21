@@ -1,0 +1,9 @@
+{
+    "/definitions/fusion": [
+        "_aliases.json",
+        "fcolordialog.json",
+        "ffilldialog.json",
+        "fgradientdialog.json",
+        "lineeditor.json"
+    ]
+}

@@ -66,6 +66,9 @@
     <ClCompile Include="src\fusion_init.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="definitions\definitions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="include\Fusion\fcolorcontrol.h">

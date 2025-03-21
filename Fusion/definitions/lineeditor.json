@@ -1,0 +1,11 @@
+{
+    "Color Dialog Line Editor": {
+        "_include": "QLayers/qllineeditor.json::Line Editor",
+        "attributes": {
+            "Margins.Bottom": 8,
+            "Margins.Left": 7,
+            "Margins.Right": 8,
+            "Margins.Top": 7
+        }
+    }
+}

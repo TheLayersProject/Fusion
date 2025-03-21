@@ -1,0 +1,106 @@
+{
+    "Gradient Dialog": {
+        "_include": "QLayers/qldialog.json::Dialog",
+        "children": {
+            "Apply Button": {
+                "_include": "QLayers/qlwidget.json::Widget",
+                "attributes": {
+                    "Corner Radii.Bottom Left": 4,
+                    "Corner Radii.Bottom Right": 4,
+                    "Corner Radii.Top Left": 4,
+                    "Corner Radii.Top Right": 4,
+                    "Fill": "#4d5159"
+                },
+                "children": {
+                    "Graphic": {
+                        "children": {
+                            "Svg": {
+                                "attributes": {
+                                    "Color": "#74ce5f"
+                                }
+                            }
+                        }
+                    },
+                    "Text Label": "QLayers/qllabel.json::Label"
+                }
+            },
+            "Gradient Editor": {
+                "attributes": {
+                    "Border.Fill": "L:Theme/Tertiary",
+                    "Border.Thickness": 2,
+                    "Corner Radii.Bottom Left": 8,
+                    "Corner Radii.Bottom Right": 8,
+                    "Corner Radii.Top Left": 8,
+                    "Corner Radii.Top Right": 8,
+                    "Margins.Left": 18,
+                    "Margins.Right": 18
+                },
+                "children": {
+                    "Add Stop Buttons": {
+                        "_include": "QLayers/qlwidget.json::Widget",
+                        "attributes": {
+                            "Border.Fill": "L:Theme/Tertiary",
+                            "Border.Thickness": 2,
+                            "Corner Radii.Bottom Left": 4,
+                            "Corner Radii.Bottom Right": 4,
+                            "Corner Radii.Top Left": 4,
+                            "Corner Radii.Top Right": 4,
+                            "Fill": {
+                                "link": "L:Gradient Dialog/Fill",
+                                "link_relative": ""
+                            },
+                            "Margins.Bottom": 8,
+                            "Margins.Left": 8,
+                            "Margins.Right": 8,
+                            "Margins.Top": 8
+                        },
+                        "children": {
+                            "Graphic": {
+                                "children": {
+                                    "Svg": {
+                                        "attributes": {
+                                            "Color": {
+                                                "states": {
+                                                    "Selected": "#8cfa6a"
+                                                },
+                                                "value": "#6fc654"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Titlebar": {
+                "children": {
+                    "Exit Button": {
+                        "_include": "QLayers/qlwidget.json::Widget",
+                        "attributes": {
+                            "Corner Radii.Top Right": 7,
+                            "Fill": "#00000000"
+                        },
+                        "children": {
+                            "Graphic": {
+                                "_include": "QLayers/qlwidget.json::Widget",
+                                "children": {
+                                    "Svg": {
+                                        "attributes": {
+                                            "Color": {
+                                                "states": {
+                                                    "Selected": "#e33036"
+                                                },
+                                                "value": "#6a6a6a"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

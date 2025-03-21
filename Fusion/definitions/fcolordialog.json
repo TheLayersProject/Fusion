@@ -1,0 +1,69 @@
+{
+    "Color Dialog": {
+        "_include": "QLayers/qldialog.json::Dialog",
+        "children": {
+            "Apply Button": {
+                "_include": "QLayers/qlwidget.json::Widget",
+                "attributes": {
+                    "Corner Radii.Bottom Left": 4,
+                    "Corner Radii.Bottom Right": 4,
+                    "Corner Radii.Top Left": 4,
+                    "Corner Radii.Top Right": 4,
+                    "Fill": "#4d5159"
+                },
+                "children": {
+                    "Graphic": {
+                        "children": {
+                            "Svg": {
+                                "attributes": {
+                                    "Color": "#74ce5f"
+                                }
+                            }
+                        }
+                    },
+                    "Text Label": "QLayers/qllabel.json::Label"
+                }
+            },
+            "Color Name Editor": "lineeditor.json::Color Dialog Line Editor",
+            "Color Unit Label": "QLayers/qllabel.json::Label",
+            "Hue Label": "QLayers/qllabel.json::Label",
+            "Hue Line Editor": "lineeditor.json::Color Dialog Line Editor",
+            "Hue Unit Label": "QLayers/qllabel.json::Label",
+            "Saturation Label": "QLayers/qllabel.json::Label",
+            "Saturation Line Editor": "lineeditor.json::Color Dialog Line Editor",
+            "Saturation Unit Label": "QLayers/qllabel.json::Label",
+            "Titlebar": {
+                "children": {
+                    "Exit Button": {
+                        "_include": "QLayers/qlwidget.json::Widget",
+                        "attributes": {
+                            "Corner Radii.Top Right": 7,
+                            "Fill": "#00000000"
+                        },
+                        "children": {
+                            "Graphic": {
+                                "_include": "QLayers/qlwidget.json::Widget",
+                                "children": {
+                                    "Svg": {
+                                        "attributes": {
+                                            "Color": {
+                                                "states": {
+                                                    "Selected": "#e33036"
+                                                },
+                                                "value": "#6a6a6a"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Value Label": "QLayers/qllabel.json::Label",
+            "Value Line Editor": "lineeditor.json::Color Dialog Line Editor",
+            "Value Unit Label": "QLayers/qllabel.json::Label",
+            "Z-Slider": "QLayers/qlslider.json::Slider"
+        }
+    }
+}
