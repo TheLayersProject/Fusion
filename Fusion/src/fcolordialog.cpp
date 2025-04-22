@@ -36,7 +36,7 @@ FColorDialog::FColorDialog(QWidget* parent) :
 {
 	init_attributes();
 	init_layout();
-	set_icon(QLGraphic(":/images/color_icon.png"));
+	set_icon(std::make_unique<QLGraphic>(":/images/color_icon.png"));
 	set_object_name("Color Dialog");
 	setFixedSize(315, 400);
 
@@ -129,11 +129,6 @@ FColorDialog::FColorDialog(QWidget* parent) :
 	m_z_slider->set_object_name("Z-Slider");
 
 	apply_definition(lController.find_definition(path()));
-}
-
-FColorDialog::~FColorDialog()
-{
-	//delete m_color;
 }
 
 LAttribute* FColorDialog::color() const

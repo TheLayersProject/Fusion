@@ -34,7 +34,7 @@ FGradientDialog::FGradientDialog(
 	QLDialog("Gradient", parent)
 {
 	init_layout();
-	set_icon(QLGraphic(":/images/gradient_icon.svg"));
+	set_icon(std::make_unique<QLGraphic>(":/images/gradient_icon.svg"));
 	set_object_name("Gradient Dialog");
 	resize(450, minimumSizeHint().height());
 

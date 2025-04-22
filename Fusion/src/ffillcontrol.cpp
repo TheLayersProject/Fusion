@@ -35,11 +35,6 @@ FFillControl::FFillControl(QWidget* parent) :
 	set_object_name("Fill Control");
 }
 
-FFillControl::~FFillControl()
-{
-	delete m_fill;
-}
-
 void FFillControl::set_attribute(LAttribute* attribute)
 {
 	m_fill->create_link(attribute);
@@ -70,7 +65,8 @@ bool FFillControl::eventFilter(QObject* object, QEvent* event)
 void FFillControl::init_attributes()
 {
 	// Remove control attribute
-	m_fill->set_parent(nullptr);
+	// TEMP: Disabled
+	//m_fill->set_parent(nullptr);
 
 	m_border_fill->set_value("#D6D6D6");
 	m_border_thickness->set_value(2.0);

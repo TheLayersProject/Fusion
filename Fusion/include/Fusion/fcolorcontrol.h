@@ -36,8 +36,6 @@ signals:
 public:
 	FColorControl(QWidget* parent = nullptr);
 
-	~FColorControl();
-
 	void click();
 
 	void disable_clicking(bool cond = true);

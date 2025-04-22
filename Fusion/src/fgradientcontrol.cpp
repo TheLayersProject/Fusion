@@ -34,11 +34,6 @@ FGradientControl::FGradientControl(QWidget* parent) : QLWidget(parent)
 	setFixedSize(40, 40);
 }
 
-FGradientControl::~FGradientControl()
-{
-	delete m_fill;
-}
-
 bool FGradientControl::eventFilter(QObject* object, QEvent* event)
 {
 	if (event->type() == QEvent::MouseButtonPress ||
@@ -67,7 +62,8 @@ bool FGradientControl::eventFilter(QObject* object, QEvent* event)
 void FGradientControl::init_attributes()
 {
 	// Remove control attribute
-	m_fill->set_parent(nullptr);
+	// TEMP: Disabled
+	//m_fill->set_parent(nullptr);
 
 	m_border_fill->set_value("#D6D6D6");
 	m_border_thickness->set_value(2.0);

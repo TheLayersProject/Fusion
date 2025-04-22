@@ -50,7 +50,8 @@ private:
 
 	QLayers::QLButton* m_apply_button{
 		new QLayers::QLButton(
-			QLayers::QLGraphic(":/images/check.svg", QSize(16, 13)), "Apply") };
+			std::make_unique<QLayers::QLGraphic>(
+				":/images/check.svg", QSize(16, 13)), "Apply") };
 };
 FUSION_NAMESPACE_END
 

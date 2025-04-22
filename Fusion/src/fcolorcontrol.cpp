@@ -34,11 +34,6 @@ FColorControl::FColorControl(QWidget* parent) : QLWidget(parent)
 	installEventFilter(this);
 }
 
-FColorControl::~FColorControl()
-{
-	delete m_fill;
-}
-
 void FColorControl::click()
 {
 	FColorDialog color_dialog;
@@ -93,7 +88,8 @@ bool FColorControl::eventFilter(QObject* object, QEvent* event)
 void FColorControl::init_attributes()
 {
 	// Remove control attribute
-	m_fill->set_parent(nullptr);
+	// TEMP: Disabled
+	//m_fill->set_parent(nullptr);
 
 	m_border_fill->set_value("#D6D6D6");
 	m_border_thickness->set_value(2.0);

@@ -45,10 +45,7 @@
                             "Corner Radii.Bottom Right": 4,
                             "Corner Radii.Top Left": 4,
                             "Corner Radii.Top Right": 4,
-                            "Fill": {
-                                "link": "L:Gradient Dialog/Fill",
-                                "link_relative": ""
-                            },
+                            "Fill": "L:Gradient Dialog/Fill",
                             "Margins.Bottom": 8,
                             "Margins.Left": 8,
                             "Margins.Right": 8,

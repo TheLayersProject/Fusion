@@ -43,8 +43,6 @@ class FUSION_EXPORT FColorDialog : public QLayers::QLDialog
 public:
 	FColorDialog(QWidget* parent = nullptr);
 
-	~FColorDialog();
-
 	Layers::LAttribute* color() const;
 
 private slots:
@@ -56,7 +54,7 @@ private:
 
 	QLayers::QLButton* m_apply_button{
 		new QLayers::QLButton(
-			QLayers::QLGraphic(
+			std::make_unique<QLayers::QLGraphic>(
 				":/images/check.svg", QSize(16, 13)), "Apply") };
 
 	QLayers::QLLabel* m_color_unit_label{ new QLayers::QLLabel("#")};

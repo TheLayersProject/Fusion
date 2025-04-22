@@ -33,7 +33,8 @@ FFillDialog::FFillDialog(QWidget* parent) :
 {
 	init_attributes();
 	init_layout();
-	set_icon(QLGraphic(":/images/fill_icon.svg", QSize(22, 20)));
+	set_icon(std::make_unique<QLGraphic>(
+		":/images/fill_icon.svg", QSize(22, 20)));
 	set_object_name("Fill Dialog");
 	setFixedSize(165, 125);
 

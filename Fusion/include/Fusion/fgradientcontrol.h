@@ -36,8 +36,6 @@ signals:
 public:
 	FGradientControl(QWidget* parent = nullptr);
 
-	~FGradientControl();
-
 protected:
 	bool eventFilter(QObject* object, QEvent* event);
 

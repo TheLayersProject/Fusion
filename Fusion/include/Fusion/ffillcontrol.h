@@ -37,8 +37,6 @@ class FUSION_EXPORT FFillControl : public QLayers::QLWidget
 public:
 	FFillControl(QWidget* parent = nullptr);
 
-	~FFillControl();
-
 	void set_attribute(Layers::LAttribute* attribute);
 
 protected:

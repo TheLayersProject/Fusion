@@ -78,11 +78,11 @@ private:
 	void update_height_dependencies();
 	void update_width_dependencies();
 
-	Layers::LAttribute* m_color
-		{ new Layers::LAttribute("color", "#ff0000", this) };
+	Layers::LAttribute* m_color{
+		lMakeDefinableAttribute(this, "color", "#ff0000") };
 
-	Layers::LAttribute* m_z_axis
-		{ new Layers::LAttribute("z_axis", 0.0, this) };
+	Layers::LAttribute* m_z_axis{
+		lMakeDefinableAttribute(this, "z_axis", 0.0) };
 
 	HSV m_z_dimension{ HSV::Hue };
 
