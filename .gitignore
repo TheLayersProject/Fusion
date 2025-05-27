@@ -66,5 +66,5 @@ Concepts/
 .DS_Store
 
 # CMake
-CMakeLists.txt
 CMakePresets.json
+build/

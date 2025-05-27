@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="33px" height="28px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-41.4897,-139.75)">
+        <g id="Fusion-Logo" serif:id="Fusion Logo" transform="matrix(0.0712015,0,0,0.0712015,41.4939,136.832)">
+            <path id="Rings" d="M55,228C35,206.7 -27.8,111.5 14,64C60.4,14.7 172,55.7 222,84C210.394,90.486 192.349,101.521 185.548,103.957C163.694,91.238 69,59.9 45,84C21,108.1 51,171.9 76,202C72.2,207.5 59.8,221.9 55,228ZM375,263C276.2,391.7 55.2,461.8 10,394C-30.4,333.6 88,186.3 147,141C250,64.1 393.4,10.8 446,60C483.8,96.5 455,168.9 408,228C405.6,224.5 392.8,208.1 387,201C430.2,142.5 438.2,101.9 418,84C375,49.1 232.4,112.5 172,160C96.6,223.1 13.4,339.5 41,377C68.6,414.5 256.6,365.5 355,237C359.8,242.9 368.4,254.1 375,263ZM243,129C251.3,124.625 270.7,114.875 279,112C434.05,227.625 484.2,351.875 451,398C420.3,445.375 317.95,420.125 243,380C253.8,373.375 263.7,368.625 279,361C296.55,367.875 386.95,409.125 419,378C461.3,330.625 308.95,155.125 243,129ZM88,262C92,255.9 104,241.1 108,236C143,278.7 171,304.3 222,335C219.2,337.5 196.6,349.3 189,352C140,322.3 108.4,285.1 88,262Z" style="fill:rgb(183,183,183);"/>
+            <g id="Group-1" serif:id="Group 1">
+                <g id="Orange-Ball" serif:id="Orange Ball">
+                    <circle id="Ellipse-1" serif:id="Ellipse 1" cx="280.375" cy="224.375" r="40.375" style="fill:rgb(241,162,85);"/>
+                    <ellipse id="Ellipse-2" serif:id="Ellipse 2" cx="290.611" cy="204.756" rx="16.609" ry="10.85" style="fill:white;fill-opacity:0.65;"/>
+                </g>
+                <path id="Shape-6" serif:id="Shape 6" d="M242,238C270.343,228.452 277.943,211.548 275,184C265.486,185.452 252.229,189.69 246,198C239.771,206.31 237.8,218.833 242,238Z" style="fill-opacity:0.35;"/>
+                <g id="Red-Ball" serif:id="Red Ball">
+                    <circle id="Ellipse-11" serif:id="Ellipse 1" cx="230.375" cy="194.375" r="40.375" style="fill:rgb(241,85,85);"/>
+                    <ellipse id="Ellipse-21" serif:id="Ellipse 2" cx="240.611" cy="174.756" rx="16.609" ry="10.85" style="fill:white;fill-opacity:0.65;"/>
+                </g>
+                <path id="Shape-5" serif:id="Shape 5" d="M190,191C202.7,192.625 214.55,200.958 223,221C260.114,220.294 273.136,242.248 276,265C258.256,260.569 242,249 242,249L219,232L192,204C192,204 189.133,197.792 190,191Z" style="fill-opacity:0.35;"/>
+                <g id="Orange-Ball-copy" serif:id="Orange Ball copy">
+                    <circle id="Ellipse-12" serif:id="Ellipse 1" cx="230.375" cy="265.375" r="40.375" style="fill:rgb(241,162,85);"/>
+                    <ellipse id="Ellipse-22" serif:id="Ellipse 2" cx="240.611" cy="245.756" rx="16.609" ry="10.85" style="fill:white;fill-opacity:0.65;"/>
+                </g>
+                <path id="Shape-61" serif:id="Shape 6" d="M192,279C220.343,269.452 227.943,252.548 225,225C215.486,226.452 202.229,230.69 196,239C189.771,247.31 187.8,259.833 192,279Z" style="fill-opacity:0.35;"/>
+                <g id="Red-Ball-copy" serif:id="Red Ball copy">
+                    <circle id="Ellipse-13" serif:id="Ellipse 1" cx="180.375" cy="235.375" r="40.375" style="fill:rgb(241,85,85);"/>
+                    <ellipse id="Ellipse-23" serif:id="Ellipse 2" cx="190.611" cy="215.756" rx="16.609" ry="10.85" style="fill:white;fill-opacity:0.65;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
