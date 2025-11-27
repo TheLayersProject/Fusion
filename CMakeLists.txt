@@ -5,20 +5,31 @@ project(Fusion)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-if (WIN32)
-    set(CMAKE_PREFIX_PATH "C:/Qt/6.9.0/msvc2022_64")
-else()
-    set(CMAKE_PREFIX_PATH "/Users/huntermalm/Qt/6.9.0/macos")
-endif()
-
 set(LAYERS_DIR $ENV{Layers})
 set(QLAYERS_DIR $ENV{QLayers})
 
 # Find Qt modules
-find_package(Qt6 6.9.0 COMPONENTS Core Gui Widgets Svg Network REQUIRED)
+find_package(Qt6 6.9.1 COMPONENTS Core Gui Widgets Svg Network REQUIRED)
 
-# Set the definitions for Fusion
-file(GLOB DEFINITIONS "definitions/definitions.cpp")
+# Set the resource compiler path based on configuration
+if (WIN32)
+    set(RESOURCE_COMPILER_DEBUG "${LAYERS_DIR}/bin/Debug/LayersResourceCompilerd.exe")
+    set(RESOURCE_COMPILER_RELEASE "${LAYERS_DIR}/bin/Release/LayersResourceCompiler.exe")
+else()
+    set(RESOURCE_COMPILER_DEBUG "${LAYERS_DIR}/bin/LayersResourceCompilerd")
+    set(RESOURCE_COMPILER_RELEASE "${LAYERS_DIR}/bin/LayersResourceCompiler")
+endif()
+
+# Generate styles.cpp from styles.lrc using the Layers resource compiler
+add_custom_command(
+    OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/styles.cpp
+    COMMAND $<$<CONFIG:Debug>:${RESOURCE_COMPILER_DEBUG}>$<$<CONFIG:Release>:${RESOURCE_COMPILER_RELEASE}>
+        ${CMAKE_CURRENT_SOURCE_DIR}/styles/styles.lrc
+        ${CMAKE_CURRENT_BINARY_DIR}/styles.cpp
+    DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/styles/styles.lrc
+    COMMENT "Generating styles.cpp from styles.lrc"
+    VERBATIM
+)
 
 # Set the source files for Fusion
 file(GLOB SOURCES "src/*.cpp")
@@ -40,7 +51,12 @@ qt6_add_resources(IMAGES_RC ${IMAGES})
 qt6_wrap_cpp(MOC_FILES ${ALL_HEADERS})
 
 # Add the shared library target
-add_library(Fusion SHARED ${SOURCES} ${DEFINITIONS} ${MOC_FILES} ${IMAGES_RC})
+add_library(Fusion SHARED
+    ${SOURCES}
+    ${CMAKE_CURRENT_BINARY_DIR}/styles.cpp
+    ${MOC_FILES}
+    ${IMAGES_RC}
+)
 
 # Add the FUSION_LIB definition when building the library
 target_compile_definitions(Fusion PRIVATE FUSION_LIB)

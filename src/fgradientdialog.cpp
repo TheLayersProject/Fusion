@@ -35,10 +35,10 @@ FGradientDialog::FGradientDialog(
 {
 	init_layout();
 	set_icon(std::make_unique<QLGraphic>(":/images/gradient_icon.svg"));
-	set_object_name("Gradient Dialog");
+	setObjectName("Gradient Dialog");
 	resize(450, minimumSizeHint().height());
 
-	m_apply_button->set_object_name("Apply Button");
+	m_apply_button->setObjectName("Apply Button");
 	m_apply_button->set_font_size_f(10.5);
 	m_apply_button->set_padding(6);
 	m_apply_button->setFixedHeight(30);
@@ -46,7 +46,7 @@ FGradientDialog::FGradientDialog(
 	connect(m_apply_button, &QLButton::clicked,
 		[this] { done(QDialog::Accepted); });
 
-	apply_definition(lController.find_definition(path()));
+	//apply_style(lController.find_style(path()));
 }
 
 std::vector<LString> FGradientDialog::stops() const

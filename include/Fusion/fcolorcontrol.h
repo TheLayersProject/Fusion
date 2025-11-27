@@ -23,10 +23,10 @@
 #include "fusion_global.h"
 #include "fusion_export.h"
 
-#include <QLayers/qlwidget.h>
+#include <QWidget>
 
 FUSION_NAMESPACE_BEGIN
-class FUSION_EXPORT FColorControl : public QLayers::QLWidget
+class FUSION_EXPORT FColorControl : public QWidget
 {
 	Q_OBJECT
 
@@ -44,7 +44,7 @@ protected:
 	virtual bool eventFilter(QObject* object, QEvent* event) override;
 
 private:
-	void init_attributes();
+	//void init_attributes();
 
 	bool clicking_disabled{ false };
 	bool open_on_release{ false };

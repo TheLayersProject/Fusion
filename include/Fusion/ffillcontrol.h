@@ -25,12 +25,12 @@
 #include "fusion_global.h"
 #include "fusion_export.h"
 
-#include <QLayers/qlwidget.h>
+#include <QWidget>
 
 FUSION_NAMESPACE_BEGIN
 class FFillDialog;
 
-class FUSION_EXPORT FFillControl : public QLayers::QLWidget
+class FUSION_EXPORT FFillControl : public QWidget
 {
 	Q_OBJECT
 
@@ -43,7 +43,7 @@ protected:
 	bool eventFilter(QObject* object, QEvent* event);
 
 private:
-	void init_attributes();
+	//void init_attributes();
 };
 FUSION_NAMESPACE_END
 

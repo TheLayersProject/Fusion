@@ -25,19 +25,18 @@
 using Layers::LAttribute;
 using Fusion::FFillControl;
 
-FFillControl::FFillControl(QWidget* parent) :
-	QLWidget(parent)
+FFillControl::FFillControl(QWidget* parent) : QWidget(parent)
 {
-	init_attributes();
+	//init_attributes();
 
 	installEventFilter(this);
 	setFixedSize(40, 40);
-	set_object_name("Fill Control");
+	setObjectName("Fill Control");
 }
 
 void FFillControl::set_attribute(LAttribute* attribute)
 {
-	m_fill->create_link(attribute);
+	//m_fill->create_link(attribute);
 }
 
 bool FFillControl::eventFilter(QObject* object, QEvent* event)
@@ -53,7 +52,7 @@ bool FFillControl::eventFilter(QObject* object, QEvent* event)
 			{
 				FFillDialog fill_dialog;
 				fill_dialog.move(mapToGlobal(QPoint(0, 0)));
-				fill_dialog.set_attribute(m_fill);
+				//fill_dialog.set_attribute(m_fill);
 				fill_dialog.exec();
 			}
 		}
@@ -62,20 +61,20 @@ bool FFillControl::eventFilter(QObject* object, QEvent* event)
 	return false;
 }
 
-void FFillControl::init_attributes()
-{
-	// Remove control attribute
-	// TEMP: Disabled
-	//m_fill->set_parent(nullptr);
+// void FFillControl::init_attributes()
+// {
+// 	// Remove control attribute
+// 	// TEMP: Disabled
+// 	//m_fill->set_parent(nullptr);
 
-	m_border_fill->set_value("#D6D6D6");
-	m_border_thickness->set_value(2.0);
-	m_corner_radii_top_left->set_value(5.0);
-	m_corner_radii_top_right->set_value(5.0);
-	m_corner_radii_bottom_left->set_value(5.0);
-	m_corner_radii_bottom_right->set_value(5.0);
-	m_margins_left->set_value(8.0);
-	m_margins_top->set_value(8.0);
-	m_margins_right->set_value(8.0);
-	m_margins_bottom->set_value(8.0);
-}
+// 	m_border_fill->set_value("#D6D6D6");
+// 	m_border_thickness->set_value(2.0);
+// 	m_corner_radii_top_left->set_value(5.0);
+// 	m_corner_radii_top_right->set_value(5.0);
+// 	m_corner_radii_bottom_left->set_value(5.0);
+// 	m_corner_radii_bottom_right->set_value(5.0);
+// 	m_margins_left->set_value(8.0);
+// 	m_margins_top->set_value(8.0);
+// 	m_margins_right->set_value(8.0);
+// 	m_margins_bottom->set_value(8.0);
+// }

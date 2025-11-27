@@ -24,11 +24,12 @@
 #include <Fusion/fgradientdialog.h>
 
 using Layers::LString;
+using Layers::LStringList;
 using Fusion::FGradientControl;
 
-FGradientControl::FGradientControl(QWidget* parent) : QLWidget(parent)
+FGradientControl::FGradientControl(QWidget* parent) : QWidget(parent)
 {
-	init_attributes();
+	//init_attributes();
 
 	installEventFilter(this);
 	setFixedSize(40, 40);
@@ -43,13 +44,16 @@ bool FGradientControl::eventFilter(QObject* object, QEvent* event)
 
 		if (mouse_event->button() & Qt::LeftButton)
 		{
-			FGradientDialog gradient_dialog(m_fill->as<std::vector<LString>>());
+			LStringList stops;
 
-			center(&gradient_dialog, window());
+			//FGradientDialog gradient_dialog(m_fill->as<std::vector<LString>>());
+			FGradientDialog gradient_dialog(stops);
+
+			//center(&gradient_dialog, window());
 
 			if (gradient_dialog.exec())
 			{
-				fill()->set_value(gradient_dialog.stops());
+				//fill()->set_value(gradient_dialog.stops());
 
 				emit gradient_changed();
 			}
@@ -59,22 +63,22 @@ bool FGradientControl::eventFilter(QObject* object, QEvent* event)
 	return false;
 }
 
-void FGradientControl::init_attributes()
-{
-	// Remove control attribute
-	// TEMP: Disabled
-	//m_fill->set_parent(nullptr);
+// void FGradientControl::init_attributes()
+// {
+// 	// Remove control attribute
+// 	// TEMP: Disabled
+// 	//m_fill->set_parent(nullptr);
 
-	m_border_fill->set_value("#D6D6D6");
-	m_border_thickness->set_value(2.0);
-	m_corner_radii_top_left->set_value(5.0);
-	m_corner_radii_top_right->set_value(5.0);
-	m_corner_radii_bottom_left->set_value(5.0);
-	m_corner_radii_bottom_right->set_value(5.0);
-	m_margins_left->set_value(8.0);
-	m_margins_top->set_value(8.0);
-	m_margins_right->set_value(8.0);
-	m_margins_bottom->set_value(8.0);
+// 	m_border_fill->set_value("#D6D6D6");
+// 	m_border_thickness->set_value(2.0);
+// 	m_corner_radii_top_left->set_value(5.0);
+// 	m_corner_radii_top_right->set_value(5.0);
+// 	m_corner_radii_bottom_left->set_value(5.0);
+// 	m_corner_radii_bottom_right->set_value(5.0);
+// 	m_margins_left->set_value(8.0);
+// 	m_margins_top->set_value(8.0);
+// 	m_margins_right->set_value(8.0);
+// 	m_margins_bottom->set_value(8.0);
 
-	m_fill->set_value(std::vector<LString>({ "0:#ffffff", "1:#000000" }));
-}
+// 	m_fill->set_value(std::vector<LString>({ "0:#ffffff", "1:#000000" }));
+// }

@@ -27,14 +27,14 @@
 
 namespace Layers {
     namespace Resources {
-        extern void initResources_definitions();
+        extern void initResources_styles();
     }
 }
 
 void initialize_resources()
 {
     // Initialize Layers resources
-    Layers::Resources::initResources_definitions();
+    Layers::Resources::initResources_styles();
 }
 
 FUSION_NAMESPACE_BEGIN
@@ -43,8 +43,8 @@ Initializer::Initializer()
 {
     initialize_resources();
 
-    lController.include_internal("/definitions/fusion");
-    qDebug() << "Fusion: Loaded Definitions";
+    lController.include_internal("/styles/fusion");
+    qDebug() << "Fusion: Loaded Styles";
 }
 
 static Initializer fusion_initializer;

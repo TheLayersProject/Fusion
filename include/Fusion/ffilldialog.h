@@ -43,7 +43,7 @@ public:
 	void set_attribute(Layers::LAttribute* attribute);
 
 private:
-	void init_attributes();
+	//void init_attributes();
 	void init_layout();
 
 	QLayers::QLToggleSwitch* m_fill_type_toggle{ new QLayers::QLToggleSwitch(true) };

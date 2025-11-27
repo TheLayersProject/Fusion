@@ -20,13 +20,13 @@
 #ifndef FGRADIENTCONTROL_H
 #define FGRADIENTCONTROL_H
 
-#include <QLayers/qlwidget.h>
+#include <QWidget>
 
 #include "fusion_global.h"
 #include "fusion_export.h"
 
 FUSION_NAMESPACE_BEGIN
-class FUSION_EXPORT FGradientControl : public QLayers::QLWidget
+class FUSION_EXPORT FGradientControl : public QWidget
 {
 	Q_OBJECT
 

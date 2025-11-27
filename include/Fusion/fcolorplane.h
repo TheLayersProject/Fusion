@@ -26,12 +26,12 @@
 #include "fusion_export.h"
 
 #include <QLayers/qlcalculate.h>
-#include <QLayers/qlwidget.h>
+#include <QWidget>
 
 #include "fcolor.h"
 
 FUSION_NAMESPACE_BEGIN
-class FUSION_EXPORT FColorPlane : public QWidget, public QLayers::QLDefinable
+class FUSION_EXPORT FColorPlane : public QWidget
 {
 	Q_OBJECT
 
@@ -79,14 +79,14 @@ private:
 	void update_width_dependencies();
 
 	Layers::LAttribute* m_color{
-		lMakeDefinableAttribute(this, "color", "#ff0000") };
+		new Layers::LAttribute("color", "#ff0000") };
 
 	Layers::LAttribute* m_z_axis{
-		lMakeDefinableAttribute(this, "z_axis", 0.0) };
+		new Layers::LAttribute("z_axis", 0.0) };
 
 	HSV m_z_dimension{ HSV::Hue };
 
-	QLayers::QLWidget* m_cursor{ new QLayers::QLWidget(this) };
+	QWidget* m_cursor{ new QWidget(this) };
 
 	int m_draw_height{ 245 };
 	int m_draw_width{ 245 };

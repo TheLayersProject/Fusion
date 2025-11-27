@@ -31,15 +31,15 @@ using Fusion::FFillDialog;
 FFillDialog::FFillDialog(QWidget* parent) :
 	QLDialog("Fill", parent)
 {
-	init_attributes();
+	//init_attributes();
 	init_layout();
 	set_icon(std::make_unique<QLGraphic>(
 		":/images/fill_icon.svg", QSize(22, 20)));
-	set_object_name("Fill Dialog");
+	setObjectName("Fill Dialog");
 	setFixedSize(165, 125);
 
-	m_color_control->set_object_name("Color Control");
-	m_gradient_control->set_object_name("Gradient Control");
+	m_color_control->setObjectName("Color Control");
+	m_gradient_control->setObjectName("Gradient Control");
 
 	connect(m_color_control, &FColorControl::color_changed,
 		[this] { done(QDialog::Accepted); });
@@ -48,16 +48,16 @@ FFillDialog::FFillDialog(QWidget* parent) :
 		[this] { done(QDialog::Accepted); });
 
 	m_fill_type_toggle->setFixedHeight(85);
-	m_fill_type_toggle->set_object_name("Fill Type Toggle");
+	m_fill_type_toggle->setObjectName("Fill Type Toggle");
 
 	connect(m_fill_type_toggle, &QLToggleSwitch::toggled_event,
 		[this](bool toggled)
 		{
 			if (toggled)
 			{
-				m_previous_color = m_color_control->fill()->as<LString>();
+				// m_previous_color = m_color_control->fill()->as<LString>();
 
-				m_gradient_control->fill()->set_value(m_previous_gradient);
+				// m_gradient_control->fill()->set_value(m_previous_gradient);
 
 				m_gradient_label_opacity->setOpacity(1.0);
 				m_gradient_control->show();
@@ -67,10 +67,10 @@ FFillDialog::FFillDialog(QWidget* parent) :
 			}
 			else
 			{
-				m_previous_gradient =
-					m_gradient_control->fill()->as<std::vector<LString>>();
+				// m_previous_gradient =
+				// 	m_gradient_control->fill()->as<std::vector<LString>>();
 
-				m_color_control->fill()->set_value(m_previous_color);
+				// m_color_control->fill()->set_value(m_previous_color);
 
 				m_color_label_opacity->setOpacity(1.0);
 				m_color_control->show();
@@ -85,59 +85,59 @@ FFillDialog::FFillDialog(QWidget* parent) :
 	m_color_label->set_font_size(14);
 	m_color_label->setFixedHeight(40);
 	m_color_label->setGraphicsEffect(m_color_label_opacity);
-	m_color_label->set_object_name("Color Label");
+	m_color_label->setObjectName("Color Label");
 
 	m_gradient_label_opacity->setOpacity(1.0);
 
 	m_gradient_label->set_font_size(14);
 	m_gradient_label->setFixedHeight(40);
 	m_gradient_label->setGraphicsEffect(m_gradient_label_opacity);
-	m_gradient_label->set_object_name("Gradient Label");
+	m_gradient_label->setObjectName("Gradient Label");
 
-	apply_definition(lController.find_definition(path()));
+	//apply_style(lController.find_style(path()));
 }
 
 void FFillDialog::set_attribute(LAttribute* attribute)
 {
-	m_gradient_control->fill()->create_link(attribute);
-	m_color_control->fill()->create_link(attribute);
+	// m_gradient_control->fill()->create_link(attribute);
+	// m_color_control->fill()->create_link(attribute);
 
-	if (const auto* gradient_stops =
-		m_color_control->fill()->as_if<std::vector<LString>>())
-	{
-		m_fill_type_toggle->toggle(false);
+	// if (const auto* gradient_stops =
+	// 	m_color_control->fill()->as_if<std::vector<LString>>())
+	// {
+	// 	m_fill_type_toggle->toggle(false);
 
-		m_gradient_label_opacity->setOpacity(1.0);
-		m_gradient_control->show();
+	// 	m_gradient_label_opacity->setOpacity(1.0);
+	// 	m_gradient_control->show();
 
-		m_color_label_opacity->setOpacity(0.25);
-		m_color_control->hide();
-	}
-	else if (const auto* color =
-		m_color_control->fill()->as_if<LString>())
-	{
-		m_color_label_opacity->setOpacity(1.0);
-		m_color_control->show();
+	// 	m_color_label_opacity->setOpacity(0.25);
+	// 	m_color_control->hide();
+	// }
+	// else if (const auto* color =
+	// 	m_color_control->fill()->as_if<LString>())
+	// {
+	// 	m_color_label_opacity->setOpacity(1.0);
+	// 	m_color_control->show();
 
-		m_gradient_label_opacity->setOpacity(0.25);
-		m_gradient_control->hide();
-	}
+	// 	m_gradient_label_opacity->setOpacity(0.25);
+	// 	m_gradient_control->hide();
+	// }
 }
 
-void FFillDialog::init_attributes()
-{
-	m_border_thickness->set_value(0.0);
-	m_corner_radii_top_left->set_value(7.0);
-	m_corner_radii_top_right->set_value(7.0);
-	m_corner_radii_bottom_left->set_value(7.0);
-	m_corner_radii_bottom_right->set_value(7.0);
+// void FFillDialog::init_attributes()
+// {
+// 	m_border_thickness->set_value(0.0);
+// 	m_corner_radii_top_left->set_value(7.0);
+// 	m_corner_radii_top_right->set_value(7.0);
+// 	m_corner_radii_bottom_left->set_value(7.0);
+// 	m_corner_radii_bottom_right->set_value(7.0);
 
-	m_color_control->margins_top()->set_value(8.0);
-	m_color_control->margins_bottom()->set_value(8.0);
+// 	m_color_control->margins_top()->set_value(8.0);
+// 	m_color_control->margins_bottom()->set_value(8.0);
 
-	m_gradient_control->margins_top()->set_value(8.0);
-	m_gradient_control->margins_bottom()->set_value(8.0);
-}
+// 	m_gradient_control->margins_top()->set_value(8.0);
+// 	m_gradient_control->margins_bottom()->set_value(8.0);
+// }
 
 void FFillDialog::init_layout()
 {

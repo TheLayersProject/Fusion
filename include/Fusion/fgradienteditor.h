@@ -22,8 +22,8 @@
 
 #include <Layers/lstring.h>
 
+#include <QWidget.h>
 #include <QLayers/qlbutton.h>
-#include <QLayers/qlwidget.h>
 
 #include "fusion_global.h"
 #include "fusion_export.h"
@@ -33,7 +33,7 @@
 FUSION_NAMESPACE_BEGIN
 class FGradientEditorItem;
 
-class FUSION_EXPORT FGradientEditor : public QLayers::QLWidget
+class FUSION_EXPORT FGradientEditor : public QWidget
 {
 	Q_OBJECT
 
@@ -50,7 +50,7 @@ protected:
 private:
 	FGradientEditorItem* create_item(const Layers::LString& stop);
 
-	void init_attributes(const std::vector<Layers::LString>& stops);
+	//void init_attributes(const std::vector<Layers::LString>& stops);
 	void init_items(const std::vector<Layers::LString>& stops);
 	void init_add_stop_buttons();
 

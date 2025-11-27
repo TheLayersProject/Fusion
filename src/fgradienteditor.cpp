@@ -21,6 +21,7 @@
 
 #include <QMouseEvent>
 #include <Layers/lalgorithms.h>
+#include <QLayers/boxstyle.h>
 
 #include "fgradienteditoritem.h"
 
@@ -32,12 +33,12 @@ using Fusion::FGradientEditorItem;
 
 FGradientEditor::FGradientEditor(
 	std::vector<LString> stops, QWidget* parent) :
-	QLWidget(parent)
+	QWidget(parent)
 {
-	init_attributes(stops);
+	//init_attributes(stops);
 	init_items(stops);
 	init_add_stop_buttons();
-	set_object_name("Gradient Editor");
+	setObjectName("Gradient Editor");
 	installEventFilter(this);
 	setMinimumHeight(80);
 	setMouseTracking(true);
@@ -164,15 +165,15 @@ FGradientEditorItem* FGradientEditor::create_item(const LString& stop)
 	FGradientEditorItem* item = new FGradientEditorItem;
 	item->stop = gradient_stop;
 	item->control = new FColorControl(this);
-	item->control->fill()->set_value(stop_parts[1]);
+	//item->control->fill()->set_value(stop_parts[1]);
 	item->control->show();
 
 	connect(item->control, &FColorControl::color_changed,
 		[this, item]
 		{
-			item->stop.second =
-				QColor(QString::fromStdString(
-					item->control->fill()->as<LString>().c_str()));
+			// item->stop.second =
+			// 	QColor(QString::fromStdString(
+			// 		item->control->fill()->as<LString>().c_str()));
 
 			update_gradient();
 		});
@@ -180,18 +181,18 @@ FGradientEditorItem* FGradientEditor::create_item(const LString& stop)
 	return item;
 }
 
-void FGradientEditor::init_attributes(const std::vector<LString>& stops)
-{
-	m_border_fill->set_value("#000000");
-	m_border_thickness->set_value(2.0);
-	m_corner_radii_top_left->set_value(8.0);
-	m_corner_radii_top_right->set_value(8.0);
-	m_corner_radii_bottom_left->set_value(8.0);
-	m_corner_radii_bottom_right->set_value(8.0);
-	m_fill->set_value(stops);
-	m_margins_left->set_value(18.0);
-	m_margins_right->set_value(18.0);
-}
+// void FGradientEditor::init_attributes(const std::vector<LString>& stops)
+// {
+// 	m_border_fill->set_value("#000000");
+// 	m_border_thickness->set_value(2.0);
+// 	m_corner_radii_top_left->set_value(8.0);
+// 	m_corner_radii_top_right->set_value(8.0);
+// 	m_corner_radii_bottom_left->set_value(8.0);
+// 	m_corner_radii_bottom_right->set_value(8.0);
+// 	m_fill->set_value(stops);
+// 	m_margins_left->set_value(18.0);
+// 	m_margins_right->set_value(18.0);
+// }
 
 void FGradientEditor::init_items(const std::vector<LString>& stops)
 {
@@ -210,7 +211,7 @@ void FGradientEditor::init_add_stop_buttons()
 		QLButton* add_stop_button = new QLButton(
 			std::make_unique<QLGraphic>(":/images/plus.svg", QSize(14, 14)), this);
 		add_stop_button->show();
-		add_stop_button->set_object_name("Add Stop Buttons");
+		add_stop_button->setObjectName("Add Stop Buttons");
 		add_stop_button->set_padding(0);
 		add_stop_button->setFixedSize(40, 40);
 		m_add_stop_buttons.append(add_stop_button);
@@ -235,16 +236,18 @@ void FGradientEditor::init_add_stop_buttons()
 				update_gradient();
 				update_positions();
 			});
+		
+		QLayers::apply_layers_style_from_parent(add_stop_button);
 
-		if (definition())
-			add_stop_button->apply_definition(definition()->find_item(
-				add_stop_button->objectName().toStdString().c_str()));
+		// if (LStylable::style())
+		// 	add_stop_button->apply_style(LStylable::style()->find_item(
+		// 		add_stop_button->objectName().toStdString().c_str()));
 	}
 }
 
 void FGradientEditor::update_gradient()
 {
-	m_fill->set_value(stops());
+	//m_fill->set_value(stops());
 }
 
 void FGradientEditor::update_indexes()

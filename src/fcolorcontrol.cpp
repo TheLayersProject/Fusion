@@ -26,9 +26,9 @@
 using Layers::LString;
 using Fusion::FColorControl;
 
-FColorControl::FColorControl(QWidget* parent) : QLWidget(parent)
+FColorControl::FColorControl(QWidget* parent) : QWidget(parent)
 {
-	init_attributes();
+	//init_attributes();
 
 	setFixedSize(40, 40);
 	installEventFilter(this);
@@ -37,13 +37,13 @@ FColorControl::FColorControl(QWidget* parent) : QLWidget(parent)
 void FColorControl::click()
 {
 	FColorDialog color_dialog;
-	color_dialog.color()->set_value(fill()->as<LString>());
+	//color_dialog.color()->set_value(fill()->as<LString>());
 
 	center(&color_dialog, window());
 
 	if (color_dialog.exec())
 	{
-		fill()->set_value(color_dialog.color()->as<LString>());
+		//fill()->set_value(color_dialog.color()->as<LString>());
 
 		emit color_changed();
 	}
@@ -85,20 +85,20 @@ bool FColorControl::eventFilter(QObject* object, QEvent* event)
 	return false;
 }
 
-void FColorControl::init_attributes()
-{
-	// Remove control attribute
-	// TEMP: Disabled
-	//m_fill->set_parent(nullptr);
+// void FColorControl::init_attributes()
+// {
+// 	// Remove control attribute
+// 	// TEMP: Disabled
+// 	//m_fill->set_parent(nullptr);
 
-	m_border_fill->set_value("#D6D6D6");
-	m_border_thickness->set_value(2.0);
-	m_corner_radii_top_left->set_value(5.0);
-	m_corner_radii_top_right->set_value(5.0);
-	m_corner_radii_bottom_left->set_value(5.0);
-	m_corner_radii_bottom_right->set_value(5.0);
-	m_margins_left->set_value(8.0);
-	m_margins_top->set_value(8.0);
-	m_margins_right->set_value(8.0);
-	m_margins_bottom->set_value(8.0);
-}
+// 	m_border_fill->set_value("#D6D6D6");
+// 	m_border_thickness->set_value(2.0);
+// 	m_corner_radii_top_left->set_value(5.0);
+// 	m_corner_radii_top_right->set_value(5.0);
+// 	m_corner_radii_bottom_left->set_value(5.0);
+// 	m_corner_radii_bottom_right->set_value(5.0);
+// 	m_margins_left->set_value(8.0);
+// 	m_margins_top->set_value(8.0);
+// 	m_margins_right->set_value(8.0);
+// 	m_margins_bottom->set_value(8.0);
+// }
